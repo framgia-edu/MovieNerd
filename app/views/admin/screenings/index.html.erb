@@ -1,7 +1,9 @@
-<%= provide :title, t(".add_screening") %>
-<%= paginate @screenings %>
-<ul class="screenings">
-    <%= render @screenings %>
-</ul>
-<%= link_to t(".add_screening"), new_admin_screening_path,
-  class: "btn btn-lg btn-primary" %>
+<%= provide :title, t("layouts.header.screening") %>
+<h3><%= Date.today %></h1>
+<div class="content_box_showtime">
+  <ul>
+    <%= render partial: "admin/screenings/schedule", collection: @movie %>
+  </ul>
+</div>
+<h3><%= Date.tomorrow %></h1>
+<h3><%= Date.tomorrow.tomorrow %></h1>

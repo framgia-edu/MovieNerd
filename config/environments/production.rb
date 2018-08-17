@@ -1,6 +1,8 @@
 Rails.application.configure do
   config.cache_classes = true
   config.eager_load = true
+  config.time_zone = "Hanoi"
+  config.active_record.default_timezone = :local
   config.consider_all_requests_local = false
 
   config.action_controller.perform_caching = true

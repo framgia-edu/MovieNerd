@@ -29,6 +29,6 @@ class Room < ApplicationRecord
   end
 
   def name_downcase
-    self.name = name.downcase
+    self.name = name.upcase
   end
 end
