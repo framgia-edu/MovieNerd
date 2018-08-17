@@ -14,7 +14,7 @@
 
   <%= f.label :num, t(".max_seats_per_row") %>
   <%= number_field_tag :field_num, support.max_seat_per_row,
-    class: "form-control", id: "field_num", min: 0 %>
+    class: "form-control", id: "field_num", min: 0, max: 15 %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>
