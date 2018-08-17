@@ -214,7 +214,7 @@ en:
     rooms:
       new:
         screen: "Screen"
-        select_seat: "Please choose seats"
+        select_seat: "Create room"
         seat: "Seat"
         no_seat: "No seat"
         button_text: "Create room"
