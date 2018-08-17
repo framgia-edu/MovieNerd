@@ -1,6 +1,13 @@
 vi:
   english: "EN"
   vietnamese: "VI"
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Trước"
+      next: "Tiếp &rsaquo;"
+      truncate: "&hellip;"
 
   layouts:
     header:
@@ -61,7 +68,9 @@ vi:
       title: "Tiêu đề"
       no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
       movie: "phim"
+
   movie:
+    detail: "Chi tiết"
     shedule: "Các lịch chiếu đang có"
     edit: "Sửa"
     delete: "Xoá"
@@ -339,3 +348,4 @@ vi:
   time:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
+      short: "%H:%M"

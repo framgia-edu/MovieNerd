@@ -1,0 +1,9 @@
+<div class="shedule-item">
+  <%= link_to movie_path schedule do %>
+    <span class="movie-title"><%= schedule.title %></span>
+  <% end %>
+  <div id="show-time-box">
+    <%= render partial: "screenings/show_time",
+      collection: schedule.screenings.by_date(@date) %>
+  </div>
+</div>

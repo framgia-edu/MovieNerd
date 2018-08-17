@@ -19,8 +19,8 @@ en:
       about: "About"
       price: "Price"
       screening: "Show time"
-      now_showing: "Now showing"
-      coming_soon: "Coming soon"
+      now_showing: "Now Showing"
+      coming_soon: "Coming Soon"
       about: "About"
       admin: "Admin page"
     footer:
@@ -64,6 +64,7 @@ en:
       movie: "movie"
 
   movie:
+    detail: "Details"
     shedule: "Available screening time"
     edit: "Edit"
     delete: "Delete"
@@ -323,3 +324,4 @@ en:
   time:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
+      short: "%H:%M"
