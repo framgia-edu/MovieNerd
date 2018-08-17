@@ -354,8 +354,6 @@ en:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
-<<<<<<< 7cdc0aa9a93939cb64111ad8eb1172bc25e7b9a6
-=======
 
   not_sell:
     header: "THIS SRCEENING TIME'S ONLINE BOOKING IS UNAVAILABLE"
@@ -365,4 +363,3 @@ en:
     go_back: "You can go back to home page by clicking the button below."
     back: "Back to "
     home_page: "home page"
->>>>>>> not sell page
