@@ -1,1 +1,1 @@
-$("#screening-box").html("<%= escape_javascript render partial: "schedules/schedule", collection: @movie %>");
+$("#screening-box").html("<%= escape_javascript render(partial: "schedules/schedule", collection: @movie) || t("admin.screenings.not_available") %>");

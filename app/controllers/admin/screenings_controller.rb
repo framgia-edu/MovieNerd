@@ -2,8 +2,8 @@ class Admin::ScreeningsController < Admin::BaseController
   before_action :load_support, only: [:new, :edit, :create]
 
   def index
-    @screening = Screening.page(params[:page])
-                          .per Settings.admin.per_page
+    @screenings = Screening.not_show_yet.page(params[:page])
+                           .per Settings.admin.per_page
   end
 
   def new

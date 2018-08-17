@@ -312,6 +312,9 @@ label {
 
 .schedule {
   clear: both;
+  .schedule-date {
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .btnContainer {

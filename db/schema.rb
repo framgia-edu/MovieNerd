@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_064017) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.string "trailer_url"
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
 
@@ -90,13 +91,13 @@ ActiveRecord::Schema.define(version: 2018_08_20_064017) do
     t.string "remember_digest"
     t.string "reset_digest"
     t.string "activation_digest"
-    t.integer "user_type", default: 0
+    t.integer "user_type"
     t.datetime "activated_at"
     t.integer "activated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "reset_sent_at"
-    t.integer "blocked", default: 1
+    t.integer "blocked"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#home"
+    get "/not_sell", to: "static_pages#not_sell"
     get "/price", to: "static_pages#price"
     get "/about", to: "static_pages#about"
     get "/signup", to: "users#new"
@@ -39,5 +40,7 @@ Rails.application.routes.draw do
     resources :showings, only: [:index]
     resources :comings, only: [:index]
     resources :orders, only: [:create]
+    resources :accepts, only: [:index]
+    resources :fails, only: [:index]
   end
 end

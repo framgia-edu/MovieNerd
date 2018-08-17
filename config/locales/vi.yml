@@ -80,6 +80,7 @@ vi:
     movie_detail: "Nội dung phim"
     minutes: "Phút"
     label:
+      trailer_url: "Link Trailer"
       title: "Tiêu đề"
       director: "Đạo diễn"
       cast: "Diễn viên"
@@ -188,6 +189,7 @@ vi:
     dashboards:
       title: "Trang quản lý"
     movies:
+      not_available: "Phim này hiện chưa có lịch chiếu"
       index:
         title: "Quản lý phim"
         add_movie: "Thêm phim"
@@ -198,10 +200,11 @@ vi:
       edit:
         edit_movie: "Sửa thông tin phim"
     screenings:
+      not_available: "Chưa có lịch chiếu"
       booked_in_room: "Các lịch chiếu đã đặt trong phòng"
       edit_screening: "Thay đổi lịch chiếu"
       index:
-        title: "Lịch chiếu"
+        title: "Quản lý Lịch chiếu"
         add_screening: "Thêm lịch chiếu"
       new:
         delete_screening: "xoá"
@@ -219,6 +222,7 @@ vi:
     rooms:
       index:
         create_room: "Thêm phòng"
+      not_available: "Phòng chiếu này chưa có lịch chiếu"
       new:
         screen: "Màn chiếu"
         select_seat: "Tạo phòng"
@@ -227,6 +231,7 @@ vi:
         button_text: "Tạo phòng"
       show:
         name: "Phòng chiếu"
+        time: "Thời gian"
         screen: "Màn chiếu"
         seat_no: "Số ghế"
         change: "Chỉnh sửa"
@@ -250,11 +255,11 @@ vi:
 
   orders:
     show:
-      info: "Thông tin vé"
+      event: "Vé xem phim"
       username: "Thành viên"
       movie: "Phim"
-      time: "Thời gian bắt đầu chiếu"
-      seats: "Danh sách ghế"
+      time: "Thời gian"
+      seats: "Ghế"
       room: "Phòng"
 
   rooms:
@@ -314,6 +319,11 @@ vi:
         unit: "₫"
 
   screenings:
+    label:
+      duration: "Thời lượng (phút)"
+      movie: "Phim"
+      room: "Phòng chiếu"
+      screening_start: "Giờ chiếu"
     screening:
       available: "Còn trống"
       seat: "chỗ"
@@ -372,3 +382,15 @@ vi:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
+<<<<<<< 7cdc0aa9a93939cb64111ad8eb1172bc25e7b9a6
+=======
+
+  not_sell:
+    header: "CA CHIẾU NÀY HIỆN KHÔNG BÁN VÉ ONLINE "
+    remind: "Quý khán giả vui lòng lưu ý:"
+    remind_1: "- Ca chiếu dừng bán vé qua mạng trước giờ chiếu 60 phút."
+    buy_live: "Nếu bạn không thế mua vé qua mạng, xin vui lòng đến quầy bán vé tại Mọt Phim để mua vé trực tiếp."
+    go_back: "Bạn có thể về lại trang chủ bằng cách click nút dưới đây."
+    back: "Quay lại "
+    home_page: "trang chủ"
+>>>>>>> not sell page
