@@ -1,0 +1,16 @@
+<%= t ".info" %></br>
+<%= t ".username" %>: <%= @order.user.name %></br>
+
+<%= t ".movie" %>: <%= @order.screening.movie.title %></br>
+<%= t ".time" %>: <%= @order.screening.screening_start.strftime("%H:%M") %>
+</br>
+
+<%= t ".seats" %></br>
+<ul>
+  <% @order.seats.each do |seat| %>
+    <li><%= seat.name %></li>
+  <% end %>
+</ul>
+
+
+<%= t ".room" %>: <%= @order.screening.room.name %></br>

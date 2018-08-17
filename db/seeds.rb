@@ -103,20 +103,20 @@ movie.screenings.create! room_id: room2.id,
 order = user1.orders.create! screening_id: screening.id
 order2 = user2.orders.create! screening_id: screening.id
 
-seat_id = rand(1..room1.seat_no - 2)
-order.movie_tickets.create! seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
-order.movie_tickets.create seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
-order.movie_tickets.create seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
-order.movie_tickets.create seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
-order.movie_tickets.create seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
+seat_id = 2
+order.movie_tickets.create! seat_id: seat_id, screening_id: order.screening.id
+seat_id = 3
+order.movie_tickets.create seat_id: seat_id, screening_id: order.screening.id
+seat_id = 5
+order.movie_tickets.create seat_id: seat_id, screening_id: order.screening.id
+seat_id = 7
+order.movie_tickets.create seat_id: seat_id, screening_id: order.screening.id
+seat_id = 11
+order.movie_tickets.create seat_id: seat_id, screening_id: order.screening.id
+seat_id = 14
 
-order2.movie_tickets.create seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
-order2.movie_tickets.create seat_id: seat_id
-seat_id = rand(1..room1.seat_no - 2)
-order2.movie_tickets.create seat_id: seat_id
+order2.movie_tickets.create seat_id: seat_id, screening_id: order2.screening.id
+seat_id = 24
+order2.movie_tickets.create seat_id: seat_id, screening_id: order2.screening.id
+seat_id = 21
+order2.movie_tickets.create seat_id: seat_id, screening_id: order2.screening.id
