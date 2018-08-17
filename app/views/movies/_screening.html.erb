@@ -1,0 +1,5 @@
+<li>
+  <%= link_to screening.screening_start.strftime("%H:%M"),
+    room_path(screening.room.id, screening_id: screening.id) %>
+  <%= t ".available" %>: <%= pluralize screening.available_seats, t(".seat") %>
+</li>

@@ -2,8 +2,12 @@ class Admin::ScreeningsController < Admin::BaseController
   before_action :load_support, only: [:new, :edit, :create]
 
   def index
-    @screening = Screening.page(params[:page])
-                          .per Settings.admin.per_page
+    @date = if params[:date]
+              params[:date]
+            else
+              Date.tomorrow
+            end
+    @movie = Movie.movie_by_day @date
   end
 
   def new

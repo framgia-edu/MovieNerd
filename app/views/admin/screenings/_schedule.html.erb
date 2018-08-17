@@ -1,0 +1,15 @@
+<div class="shedule-item">
+  <% if logged_in? && (current_user.admin? || current_user.mod?) %>
+    <%= link_to admin_movie_path schedule do %>
+      <span class="movie-title"><%= schedule.title %></span>
+    <% end %>
+  <% else %>
+    <%= link_to movie_path schedule do %>
+      <span class="movie-title"><%= schedule.title %></span>
+    <% end %>
+  <% end %>
+  <div>
+    <%= render partial: "admin/screenings/show_time",
+      collection: schedule.screenings.by_date(@date) %>
+  </div>
+</div>

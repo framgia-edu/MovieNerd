@@ -19,4 +19,14 @@
       <span class="cgv-info-normal"><%= movie.release_date %></span>
     </div>
   </div>
+  <div class="btnContainer">
+    <%= link_to movie_path(movie),
+      class: "button btn-booking" do %>
+        <span><%= t "movie.detail" %></span>
+    <% end %>
+    <%= link_to screenings_path(movie.id),
+      class: "button btn-booking" do %>
+        <span><%= t "movie.booking" %></span>
+    <% end %>
+  </div>
 </li>
