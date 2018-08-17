@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-    resources :users
+    resources :users do
+      collection do
+        resources :orders, only: [:show]
+      end
+    end
     namespace :admin do
       get "/", to: "dashboards#index"
       resources :movies
@@ -34,5 +38,6 @@ Rails.application.routes.draw do
     resources :schedules, only: [:index]
     resources :showings, only: [:index]
     resources :comings, only: [:index]
+    resources :orders, only: [:create]
   end
 end

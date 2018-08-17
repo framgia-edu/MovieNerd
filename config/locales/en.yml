@@ -165,6 +165,7 @@ en:
     create_room_success: "Create room success"
     screening_delete_success: "Deleted screening"
     edit_faild: "Edit room failed"
+    select_seat_failed: "Select seat faild. Please try again"
 
   sessions:
     new:
@@ -245,7 +246,18 @@ en:
       title: "Title"
       director: "Director"
       description: "Description"
+
+  orders:
+    show:
+      info: "Order info"
+      username: "User"
+      movie: "Movie"
+      time: "Time"
+      seats: "Seats"
+      room: "Room"
+
   rooms:
+    pay: "Pay"
     show:
       movie: "Movie"
       time: "Time"

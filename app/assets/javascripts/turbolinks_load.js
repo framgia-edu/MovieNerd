@@ -3,6 +3,8 @@ $(document).on("turbolinks:load", function() {
     admin_show_room();
   }
   else if ($("#room_show_data").length != 0) {
+    var $room_data = $("#room_show_data");
+    reset_seat_area($room_data);
     select_seats();
   }
   else if ($("#create_room_data").length != 0) {
