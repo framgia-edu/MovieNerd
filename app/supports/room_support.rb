@@ -8,7 +8,7 @@ class RoomSupport
   end
 
   def room_map
-    @room.map
+    @room.full_a_map
   end
 
   def movie_id

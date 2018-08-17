@@ -13,6 +13,13 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "flash.pls_log_in"
+    redirect_to login_url
+  end
+
   def find_user
     @user = User.find_by id: params[:id]
 

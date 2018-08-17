@@ -1,6 +1,13 @@
 vi:
   english: "EN"
   vietnamese: "VI"
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Trước"
+      next: "Tiếp &rsaquo;"
+      truncate: "&hellip;"
 
   layouts:
     header:
@@ -22,6 +29,7 @@ vi:
       now_showing: "Phim đang chiếu"
       about: "Giới thiệu"
       admin: "Trang quản lý"
+      room: "Phòng chiếu"
     footer:
       about: "Giới thiệu"
       contact: "Liên lạc"
@@ -61,7 +69,9 @@ vi:
       title: "Tiêu đề"
       no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
       movie: "phim"
+
   movie:
+    detail: "Chi tiết"
     shedule: "Các lịch chiếu đang có"
     edit: "Sửa"
     delete: "Xoá"
@@ -161,6 +171,7 @@ vi:
     blocked: "Tài khoản của bạn đã bị chặn"
     create_room_success: "Tạo phòng thành công"
     screening_delete_success: "Xoá lịch chiếu thành công"
+    edit_faild: "Cập nhật phòng thất bại"
 
   sessions:
     new:
@@ -205,6 +216,8 @@ vi:
         user: "Quản lý người dùng"
         all_users: "Tất cả người dùng"
     rooms:
+      index:
+        create_room: "Thêm phòng"
       new:
         screen: "Màn chiếu"
         select_seat: "Vui lòng chọn ghế"
@@ -216,7 +229,14 @@ vi:
         screen: "Màn chiếu"
         seat_no: "Số ghế"
         change: "Chỉnh sửa"
+      edit:
+        edit: "Cập nhật phòng chiếu"
+        screen: "Màn chiếu"
+        seat: "Có ghế"
+        no_seat: "Không có ghế"
+        button_text: "Cập nhật"
       form:
+        name: "Tên phòng"
         seat_no: "Số lượng ghế"
         row: "Số hàng"
         max_seats_per_row: "Số ghế tối đa mỗi hàng"
@@ -339,3 +359,4 @@ vi:
   time:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
+      short: "%H:%M"
