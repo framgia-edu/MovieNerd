@@ -1,6 +1,13 @@
 vi:
   english: "EN"
   vietnamese: "VI"
+  views:
+    pagination:
+      first: "&laquo; Đầu"
+      last: "Cuối &raquo;"
+      previous: "&lsaquo; Trước"
+      next: "Tiếp &rsaquo;"
+      truncate: "&hellip;"
 
   layouts:
     header:
@@ -61,7 +68,9 @@ vi:
       title: "Tiêu đề"
       no_result: "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn."
       movie: "phim"
+
   movie:
+    detail: "Chi tiết"
     shedule: "Các lịch chiếu đang có"
     edit: "Sửa"
     delete: "Xoá"
@@ -70,6 +79,7 @@ vi:
     movie_detail: "Nội dung phim"
     minutes: "Phút"
     label:
+      trailer_url: "Link Trailer"
       title: "Tiêu đề"
       director: "Đạo diễn"
       cast: "Diễn viên"
@@ -176,6 +186,7 @@ vi:
     dashboards:
       title: "Trang quản lý"
     movies:
+      not_available: "Phim này hiện chưa có lịch chiếu"
       index:
         title: "Quản lý phim"
         add_movie: "Thêm phim"
@@ -186,10 +197,11 @@ vi:
       edit:
         edit_movie: "Sửa thông tin phim"
     screenings:
+      not_available: "Chưa có lịch chiếu"
       booked_in_room: "Các lịch chiếu đã đặt trong phòng"
       edit_screening: "Thay đổi lịch chiếu"
       index:
-        title: "Lịch chiếu"
+        title: "Quản lý Lịch chiếu"
         add_screening: "Thêm lịch chiếu"
       new:
         delete_screening: "xoá"
@@ -205,6 +217,7 @@ vi:
         user: "Quản lý người dùng"
         all_users: "Tất cả người dùng"
     rooms:
+      not_available: "Phòng chiếu này chưa có lịch chiếu"
       new:
         screen: "Màn chiếu"
         select_seat: "Vui lòng chọn ghế"
@@ -213,6 +226,7 @@ vi:
         button_text: "Tạo phòng"
       show:
         name: "Phòng chiếu"
+        time: "Thời gian"
         screen: "Màn chiếu"
         seat_no: "Số ghế"
         change: "Chỉnh sửa"
@@ -282,6 +296,11 @@ vi:
         unit: "₫"
 
   screenings:
+    label:
+      duration: "Thời lượng (phút)"
+      movie: "Phim"
+      room: "Phòng chiếu"
+      screening_start: "Giờ chiếu"
     screening:
       available: "Còn trống"
       seat: "chỗ"
@@ -339,3 +358,4 @@ vi:
   time:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
+      short: "%H:%M"

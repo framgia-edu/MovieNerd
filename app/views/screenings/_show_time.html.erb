@@ -1,0 +1,4 @@
+<li class="screen_showtime">
+  <%= link_to l(show_time.screening_start, format: :short),
+    room_path(show_time.room_id, screening_id: show_time.id) %>
+</li>

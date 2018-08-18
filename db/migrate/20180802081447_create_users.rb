@@ -7,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :remember_digest
       t.string :reset_digest
       t.string :activation_digest
-      t.integer :user_type
+      t.integer :user_type, default: 0
       t.datetime :activated_at
       t.integer :activated
       t.boolean :blocked

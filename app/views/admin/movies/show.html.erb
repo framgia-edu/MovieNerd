@@ -63,13 +63,24 @@
         <% end %>
       </div>
     </div>
+    <div class="schedule">
+      <p><%= @movie.description %></p>
+    </div>
+    <%= youtube_embed @movie.trailer_url %>
   </div>
 </div>
 
 <div class="schedule">
+  <label><%= t "movie.shedule" %>: </label>
   <% if @movie.screenings.not_show_yet.count > 0 %>
-    <label><%= t "movie.shedule" %>: </label>
-    <%= render partial: "admin/movies/screening",
-      collection: @movie.screenings.not_show_yet %>
+      <% @movie.screenings.not_show_yet.available_date.each do |date| %>
+      <div class="schedule-date">
+        <h5><%= date %></h5>
+        <%= render partial: "admin/movies/screening",
+          collection: @movie.screenings.by_date(date) %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= t "admin.movies.not_available" %>
   <% end %>
 </div>

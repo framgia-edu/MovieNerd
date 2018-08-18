@@ -1,7 +1,17 @@
-<%= provide :title, t(".add_screening") %>
-<%= paginate @screenings %>
-<ul class="screenings">
-    <%= render @screenings %>
-</ul>
-<%= link_to t(".add_screening"), new_admin_screening_path,
-  class: "btn btn-lg btn-primary" %>
+<%= provide :title, t(".title") %>
+<div class="product-view">
+  <div class="page-title product-view">
+    <span class="h1"><%= t "layouts.header.screening" %></span>
+  </div>
+  <% if @screenings.count > 0 %>
+    <% @screenings.available_date.each do |date| %>
+      <div class="screening-date">
+        <h3><%= date %></h3>
+        <%= render partial: "admin/screenings/screening",
+          collection: @screenings.by_date(date) %>
+      </div>
+    <% end %>
+  <% else %>
+    <%= t "admin.screenings.not_available" %>
+  <% end %>
+</div>

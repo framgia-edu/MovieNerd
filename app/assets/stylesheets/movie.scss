@@ -312,8 +312,19 @@ label {
 
 .schedule {
   clear: both;
+  .schedule-date {
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .btnContainer {
   margin: 5px auto;
+  bottom: 0;
+  width: 100%;
+}
+
+.product-info {
+  position: relative;
+  padding-bottom: 95px;
+  height: 130px;
 }

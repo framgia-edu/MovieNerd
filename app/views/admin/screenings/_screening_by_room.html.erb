@@ -1,0 +1,11 @@
+<% if screening_by_room.not_show_yet.count > 0 %>
+  <% screening_by_room.not_show_yet.available_date.each do |date| %>
+    <div class="screening-date">
+     <h5><%= date %></h5>
+      <%= render partial: "admin/screenings/screening_in_form",
+        collection: screening_by_room.by_date(date) %>
+    </div>
+  <% end %>
+<% else %>
+  <%= t "admin.rooms.not_available" %>
+<% end %>

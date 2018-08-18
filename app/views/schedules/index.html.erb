@@ -1,0 +1,25 @@
+<%= provide :title, t("layouts.header.screening") %>
+<div class="product-view">
+  <div class="page-title product-view">
+    <span class="h1"><%= t "layouts.header.screening" %></span>
+  </div>
+  <div class="show-screening">
+    <%= form_tag schedules_path, method: "get", remote: true do %>
+      <%= hidden_field_tag :date, Date.today %>
+      <%= submit_tag Date.today, class: "show-date h3" %>
+    <% end %>
+      <%= form_tag schedules_path, method: "get", remote: true do %>
+      <%= hidden_field_tag :date, Date.tomorrow %>
+      <%= submit_tag Date.tomorrow, class: "show-date h3" %>
+    <% end %>
+    <%= form_tag schedules_path, method: "get", remote: true do %>
+      <%= hidden_field_tag :date, Date.tomorrow.tomorrow %>
+      <%= submit_tag Date.tomorrow.tomorrow, class: "show-date h3" %>
+    <% end %>
+    <div class="content_box_showtime">
+      <ul id="screening-box">
+        <%= render(partial: "schedules/schedule", collection: @movie) || t("admin.screenings.not_available") %>
+      </ul>
+    </div>
+  </div>
+</div>

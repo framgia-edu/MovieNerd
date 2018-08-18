@@ -1,1 +1,1 @@
-$("#screenings_by_room").html("<%= j render(@support.screenings_by_room) %>");
+$("#screenings_by_room").html("<%= j render partial: "admin/screenings/screening_by_room", locals: {screening_by_room: @support.screenings_by_room} %>");

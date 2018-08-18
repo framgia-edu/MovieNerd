@@ -1,23 +1,24 @@
 <%= form_for @screening, url: yield(:url) do |f| %>
   <%= render "shared/error_messages", object: f.object %>
 
-  <%= f.label :movie_id, t("screening.label.movie") %>
+  <%= f.label :movie_id, t("screenings.label.movie") %>
   <%= f.text_field "#", value: @support.movie.title,
     class: "form-control", disabled: true%>
-  <%= f.label :movie_id, t("screening.label.duration") %>
+  <%= f.label :movie_id, t("screenings.label.duration") %>
   <%= f.text_field "#", value: @support.movie.duration,
     class: "form-control", disabled: true%>
   <%= f.hidden_field :movie_id, value: @support.movie.id %>
 
-  <%= f.label :room_id, t("screening.label.room")%>
+  <%= f.label :room_id, t("screenings.label.room")%>
   <%= f.collection_select :room_id, @support.rooms,
     :id, :name, {class: "form-control"}, {:data => {:remote => true,
     :url => new_admin_screening_path(movie_id: @support.movie)}} %>
-  <%= f.label :screening_start, t("screening.label.screening_start") %>
+  <%= f.label :screening_start, t("screenings.label.screening_start") %>
   <%= f.datetime_field :screening_start, class: "form-control", min: Date.today %>
+  <%= f.submit yield(:title), class: "btn btn-primary" %>
   <%= I18n.t "admin.screenings.booked_in_room" %>
   <div id="screenings_by_room">
-    <%= render @support.screenings_by_room %>
+    <%= render partial: "admin/screenings/screening_by_room",
+      locals: {screening_by_room: @support.screenings_by_room} %>
   </div>
-  <%= f.submit yield(:title), class: "btn btn-primary" %>
 <% end %>
