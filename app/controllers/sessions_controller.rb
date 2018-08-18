@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by email: params[:session][:email].downcase
-    if user.block?
+    if user&.block?
       flash.now[:danger] = t "flash.blocked"
       render :new
     elsif user&.authenticate params[:session][:password]
@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     if user.activated?
       log_in user
       remember_user user
-      redirect_to user
+      redirect_back_or user
     else
       flash[:warning] = t "activate_mail.message"
       redirect_to root_url

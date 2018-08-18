@@ -13,6 +13,10 @@ class Screening < ApplicationRecord
     where("screening_start >= :date", date: Date.today)
     .order screening_start: :asc
   end)
+  scope :by_date, (lambda do |date|
+    where("screening_start > ? AND "\
+     "screening_start < ?", date, date.tomorrow).order screening_start: :asc
+  end)
 
   def sold_seats
     sold = []

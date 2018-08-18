@@ -6,10 +6,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <%= stylesheet_link_tag "room_template" %>
 <% provide :button_text, t(".button_text") %>
-<% provide :url, admin_rooms_path %>
+<% provide :url, admin_room_path(@support.room) %>
 
 <div class="content">
-  <div id="create_room_data"
+  <div id="edit_room_data"
     data-map="<%= @support.map %>"
     data-deleted_seats="<%= @support.deleted_seats %>"
     data-i18n_screen="<%= t ".screen" %>"
@@ -18,7 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   </div>
 
   <div class="main">
-    <h2><%= t ".select_seat" %></h2>
+    <h2><%= t ".edit" %>: <%= @room.name %></h2>
     <div class="demo">
       <div id="seat-partial">
         <div id="seat-map">
