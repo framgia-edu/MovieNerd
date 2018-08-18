@@ -19,8 +19,8 @@ en:
       about: "About"
       price: "Price"
       screening: "Show time"
-      now_showing: "Now showing"
-      coming_soon: "Coming soon"
+      now_showing: "Now Showing"
+      coming_soon: "Coming Soon"
       about: "About"
       admin: "Admin page"
     footer:
@@ -64,6 +64,7 @@ en:
       movie: "movie"
 
   movie:
+    detail: "Details"
     shedule: "Available screening time"
     edit: "Edit"
     delete: "Delete"
@@ -72,6 +73,7 @@ en:
     movie_detail: "Movie Details"
     minutes: "Minutes"
     label:
+      trailer_url: "Trailer Url"
       title: "Title"
       director: "Director"
       cast: "Cast"
@@ -183,6 +185,7 @@ en:
     dashboards:
       title: "Admin Page"
     movies:
+      not_available: "This movie has no screen time yet"
       index:
         title: "Movies Managerment"
         add_movie: "Add movie"
@@ -193,10 +196,11 @@ en:
       edit:
         edit_movie: "Edit movie"
     screenings:
+      not_available: "There is no screen time yet"
       booked_in_room: "Booked screen time in room:"
       edit_screening: "Edit screening"
       index:
-        title: "Screening"
+        title: "Screening Managerment"
         add_screening: "Add screening"
       new:
         delete_screening: "delete"
@@ -212,6 +216,7 @@ en:
         user: "Users Management"
         all_users: "All users"
     rooms:
+      not_available: "This room has no screen time"
       new:
         screen: "Screen"
         select_seat: "Please choose seats"
@@ -290,6 +295,8 @@ en:
         unit: "$"
 
   screenings:
+    label:
+      duration: "Duration (Minutes)"
     screening:
       available: "Available"
       seat: "seats"
@@ -323,3 +330,13 @@ en:
   time:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
+      short: "%H:%M"
+
+  not_sell:
+    header: "THIS SRCEENING TIME'S ONLINE BOOKING IS UNAVAILABLE"
+    remind: "Please be advised:"
+    remind_1: "- The online booking will be unavailable 60 minutes before screening time."
+    buy_live: "If you can't buy online, please go to our ticket shop at Movie Nerd for direct purchase."
+    go_back: "You can go back to home page by clicking the button below."
+    back: "Back to "
+    home_page: "home page"

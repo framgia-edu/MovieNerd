@@ -54,7 +54,11 @@
             {"class": "button btn-booking"} do %>
             <span><%= t "movie.booking" %></span>
           <% end %>
+        </div>
       </div>
-    </div>
+      <div class="schedule">
+        <p><%= @movie.description %></p>
+      </div>
+      <%= youtube_embed @movie.trailer_url %>
   </div>
 </div>

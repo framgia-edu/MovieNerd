@@ -1,2 +1,23 @@
+<% provide :title, @support.movie_title %>
 <h1><%= @support.movie_title %></h1>
-<%= render @support.screenings_by_movie %>
+<div class="shedule-item">
+  <div>
+    <h3><%= Date.today %></h3>
+    <%= render(partial: "screenings/show_time",
+      collection: @support.movie.screenings.by_date(Date.today)) || t("admin.screenings.not_available") %>
+  </div>
+</div>
+<div class="shedule-item">
+  <div>
+    <h3><%= Date.tomorrow %></h3>
+    <%= render(partial: "screenings/show_time",
+      collection: @support.movie.screenings.by_date(Date.tomorrow)) || t("admin.screenings.not_available") %>
+  </div>
+</div>
+<div class="shedule-item">
+  <div>
+    <h3><%= Date.tomorrow.tomorrow %></h3>
+    <%= render(partial: "screenings/show_time",
+      collection: @support.movie.screenings.by_date(Date.tomorrow.tomorrow)) || t("admin.screenings.not_available") %>
+  </div>
+</div>

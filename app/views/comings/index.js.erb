@@ -1,0 +1,2 @@
+$("#movies").html("<%= j render partial: "comings/movie", collection: @movies %>");
+$("#paginator").html("<%= j paginate(@movies, remote: true) %>");
