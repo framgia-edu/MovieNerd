@@ -1,10 +1,10 @@
-class SearchsController < ApplicationController
+class Admin::SearchsController < Admin::BaseController
   before_action :search_movies
 
   def index
     respond_to do |format|
-      format.html
-      format.js
+      format.html{render "searchs/index"}
+      format.js{render "searchs/index.js.erb"}
     end
   end
 
