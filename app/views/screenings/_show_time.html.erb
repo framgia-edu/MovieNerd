@@ -1,4 +1,5 @@
 <li class="screen_showtime">
   <%= link_to l(show_time.screening_start, format: :short),
+    show_time.screening_start < (Time.zone.now + 1.hours) ? not_sell_path :
     room_path(show_time.room_id, screening_id: show_time.id) %>
 </li>

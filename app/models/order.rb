@@ -10,10 +10,6 @@ class Order < ApplicationRecord
   validates :screening, presence: true
   validates :paid, presence: true
 
-  # scope :old_n_unpaid, (lambda do
-  #   Order.where("created_at <= ? AND unpaid = ?", Time.zone.now - 30.minutes, 1)
-  # end)
-
   def delete_unpaid
     destroy if unpaid?
   end

@@ -28,6 +28,9 @@
   <%= f.label :release_date, t("movie.label.release_date") %>
   <%= f.date_field :release_date, class: "form-control", min: Date.today %>
 
+  <%= f.label :trailer_url, t("movie.label.trailer_url") %>
+  <%= f.text_field :trailer_url, class: "form-control" %>
+
   <%= f.submit yield(:title), class: "btn btn-primary" %>
 
   <span class="picture">

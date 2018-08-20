@@ -1,0 +1,10 @@
+<li>
+  <label><%= t "admin.rooms.show.time"%>: </label>
+  <span><%= l screening_in_form.screening_start, format: :short %> - </span>
+  <span><%= l screening_in_form.screening_start + @support.movie.duration.minutes, format: :short %></span>
+  <label><%= t "layouts.header.movie"%>: </label>
+  <span><%= link_to screening_in_form.movie.title, admin_movie_path(@support.movie) %></span>
+  | <%= link_to t("movie.delete"),
+    admin_screening_path(screening_in_form, movie_id: @support.movie.id), method: :delete,
+    data: {confirm: t("movie.sure")} %>
+</li>

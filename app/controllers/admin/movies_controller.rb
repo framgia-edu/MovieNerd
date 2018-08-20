@@ -56,6 +56,7 @@ class Admin::MoviesController < Admin::BaseController
 
   def movie_params
     params.require(:movie).permit :title, :cast, :director, :description,
-      :duration, :rated, :language, :genre, :release_date, :picture
+      :duration, :rated, :language, :genre,
+      :release_date, :picture, :trailer_url
   end
 end
