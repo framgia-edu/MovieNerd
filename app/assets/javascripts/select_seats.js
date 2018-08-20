@@ -66,6 +66,15 @@ function select_seats() {
         }
       }
     });
+
+    var selected_seats = $room_data.data("selected_seats");
+    console.log(selected_seats);
+
+    sc.get(selected_seats).status("selected");
+    order = new Set();
+    selected_seats.forEach(function(selected_seat) {
+      order.add(selected_seat);
+    });
     sc.get($room_data.data("sold")).status("unavailable");
 
     function recalculateTotal(sc) {
@@ -79,18 +88,6 @@ function select_seats() {
 }
 
 function bookSeats() {
-  var AUTH_TOKEN = $("meta[name=csrf-token]").attr("content"),
-  $room_data = $("#room_show_data");
-
-  $.ajax({
-    url: "/orders/new",
-    type: "get",
-    data: {
-      movie_id: $room_data.data("movie_id"),
-      screening_id: $room_data.data("screening_id"),
-      room_id: $room_data.data("room_id"),
-      authenticity_token: AUTH_TOKEN,
-      seats: Array.from(order)
-    }
-  });
+  var $selected_seats = $("#selected_seats");
+  selected_seats.value = Array.from(order);
 };

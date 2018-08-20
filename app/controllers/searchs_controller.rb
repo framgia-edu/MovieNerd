@@ -1,7 +1,12 @@
 class SearchsController < ApplicationController
   before_action :search_movies
 
-  def index; end
+  def index
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
   def create
     render "searchs/index"

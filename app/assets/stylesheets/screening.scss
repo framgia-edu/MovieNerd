@@ -1,0 +1,54 @@
+.screen_showtime {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+
+  a {
+    background: #d69999;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+  }
+  a:hover {
+    background: #990403;
+  }
+}
+
+.movie-title {
+  width: 50%;
+  display: inline-block;
+  font-size: 18px;
+  font-family: "Helvetica Neue", Verdana, Arial, sans-serif;
+  font-weight: 600;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.content_box_showtime {
+  border-top: 1px solid #ccc;
+
+}
+.shedule-item{
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  span {
+    margin-bottom: 10px;
+  }
+}
+
+.show-screening {
+  form{
+    display: inline;
+  }
+  .show-date {
+    width: auto;
+    border: 1px solid;
+  }
+}

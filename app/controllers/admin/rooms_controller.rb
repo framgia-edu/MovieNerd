@@ -1,23 +1,20 @@
 class Admin::RoomsController < Admin::BaseController
+  def index
+    @rooms = Room.page(params[:page]).per Settings.admin.per_page
+  end
+
   def new
-    if params[:field_map]
-      @support = new_room params[:field_map], params[:field_deleted_seats]
-      respond_to do |format|
-        format.js
-      end
-    else
-      @support = new_room %w(aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa), []
-    end
+    @support = new_room %w(aaaaaa aaaaaa aaaaaa aaaaaa aaaaaa)
   end
 
   def create
-    @room = Room.new
+    @room = Room.new params_name
     set_map @room, params_map
     if @room.save
       flash[:success] = t "flash.create_room_success"
       redirect_to admin_room_url(@room)
     else
-      @support = new_room params_map, params_deleted_seats
+      @support = new_room params_map
       respond_to do |format|
         format.js
       end
@@ -31,29 +28,47 @@ class Admin::RoomsController < Admin::BaseController
     flash[:danger] = t "flash.no_room"
   end
 
+  def edit
+    @room = Room.find_by id: params[:id]
+    @support = editable_room @room
+  end
+
+  def update
+    @room = Room.find_by id: params[:id]
+    if @room.set_map params_map
+      redirect_to admin_room_url @room
+    else
+      flash[:danger] = t "flash.edit_faild"
+      redirect_to edit_admin_room_url @room
+    end
+  end
+
   private
+
+  def params_name
+    params.require(:room).permit :name
+  end
 
   def params_map
     params.require(:field_map).split ","
   end
 
-  def params_deleted_seats
-    params.require(:field_deleted_seats).split ","
-  end
-
-  def new_room map, deleted_seats
+  def new_room map
     room = Room.new
     set_map room, map
-    row_num = room.row_num
-    max_seat_per_row = room.max_seat_per_row
-    deleted_seats ||= []
-    AdminRoomSupport.new room, row_num, max_seat_per_row, deleted_seats, map
+    AdminRoomSupport.new room, map
+  end
+
+  def editable_room room
+    map = room.full_a_map
+    AdminRoomSupport.new room, map
   end
 
   def set_map room, map
     map.each_with_index do |row, row_index|
       row.split("").each_with_index do |pos, pos_index|
-        room.seats.build row: row_index + 1, number: pos_index + 1 if pos == "a"
+        next unless pos == "a"
+        room.seats.build row: row_index + 1, number: pos_index + 1
       end
     end
     room.seat_no = room.seats.size

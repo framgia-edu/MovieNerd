@@ -22,6 +22,21 @@ class Movie < ApplicationRecord
   validate :picture_size
   scope :with_title, ->(title){where "LOWER(title) like ?", "%#{title}%"}
   scope :home_movie, ->{order release_date: :desc}
+  scope :movie_by_day, (lambda do |date|
+    Movie.where(id: Screening.where("screening_start > ? AND "\
+      "screening_start < ?", date, date.tomorrow).distinct.pluck(:movie_id))
+  end)
+  scope :showing, (lambda do
+    Movie.where(id: Screening.where("screening_start > ? AND screening_start"\
+      " < ?", Date.today, Date.today + Settings.movie.showing_day)
+      .distinct.pluck(:movie_id))
+  end)
+  scope :coming, (lambda do
+    Movie.where("release_date >= ?", Date.today).where.not(id:
+      Screening.where("screening_start > ? AND"\
+      " screening_start" < '"', Date.today,
+        Date.today + Settings.movie.showing_day).distinct.pluck(:movie_id))
+  end)
   pg_search_scope :full_text_search,
     against: {
       title: "A",
