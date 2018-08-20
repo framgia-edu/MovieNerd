@@ -17,9 +17,9 @@ class OrdersController < ApplicationController
         seat = room.seats.find_by row: row, number: num
         order.movie_tickets.create! seat_id: seat.id, screening_id: params[:screening_id]
       end
-      # redirect_to order_url(order.id)
-      redirect_to baokim(screening.movie.title, screening.movie.id,
-        params_selected_seats.count, order.id)
+      redirect_to order_url(order.id)
+      # redirect_to baokim(screening.movie.title, screening.movie.id,
+      #   params_selected_seats.count, order.id)
     end
     rescue
       load_support screening

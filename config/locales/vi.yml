@@ -382,8 +382,6 @@ vi:
     formats:
       default: "%A, %d/%m/%Y %H:%M"
       short: "%H:%M"
-<<<<<<< 7cdc0aa9a93939cb64111ad8eb1172bc25e7b9a6
-=======
 
   not_sell:
     header: "CA CHIẾU NÀY HIỆN KHÔNG BÁN VÉ ONLINE "
@@ -393,4 +391,3 @@ vi:
     go_back: "Bạn có thể về lại trang chủ bằng cách click nút dưới đây."
     back: "Quay lại "
     home_page: "trang chủ"
->>>>>>> not sell page

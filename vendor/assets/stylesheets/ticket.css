@@ -1,15 +1,16 @@
 body {
   margin: 0;
   color: #494140;
-  font-family: "Kreon", serif;
-  font-weight: 400;
-  font-size: 25px;
 }
 
 section {
   position: relative;
-  float: right;
+  float: left;
   width: 685px;
+  font-family: "Kreon", serif;
+  font-weight: 400;
+  font-size: 25px;
+  margin-left: 200px;
 }
 section .special {
   -moz-box-sizing: border-box;
@@ -59,6 +60,7 @@ section .seats {
   left: 30px;
   color: #fff;
   font-weight: 700;
+  vertical-align: top;
 }
 section .seats span {
   display: inline-block;
@@ -69,11 +71,11 @@ section .seats .label {
   font-weight: 400;
   text-align: right;
   text-transform: uppercase;
-  vertical-align: top;
+  /*vertical-align: top;*/
 }
 
 aside {
-  float: right;
+  float: left;
   width: 110px;
 }
 aside figure {
