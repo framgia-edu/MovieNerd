@@ -172,6 +172,7 @@ vi:
     create_room_success: "Tạo phòng thành công"
     screening_delete_success: "Xoá lịch chiếu thành công"
     edit_faild: "Cập nhật phòng thất bại"
+    select_seat_failed: "Chọn ghế không thành công. Vui lòng thử lại."
 
   sessions:
     new:
@@ -246,7 +247,18 @@ vi:
       title: "Tên phim"
       director: "Đạo diễn"
       description: "Giới thiệu"
+
+  orders:
+    show:
+      info: "Thông tin vé"
+      username: "Thành viên"
+      movie: "Phim"
+      time: "Thời gian bắt đầu chiếu"
+      seats: "Danh sách ghế"
+      room: "Phòng"
+
   rooms:
+    pay: "Thanh toán"
     show:
       movie: "Phim"
       time: "Thời gian"
