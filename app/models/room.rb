@@ -6,7 +6,7 @@ class Room < ApplicationRecord
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   before_save :name_downcase
 
-  def map
+  def full_a_map
     set_chair row_num, max_seat_per_row
   end
 

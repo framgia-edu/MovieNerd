@@ -4,6 +4,9 @@
   <%= hidden_field_tag :field_deleted_seats %>
   <%= hidden_field_tag :field_map %>
 
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
   <%= f.label :seat_no, t(".seat_no") %>
   <%= f.number_field :seat_no, class: "form-control",
     id: "field_seat_no", disabled: true %>

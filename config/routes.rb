@@ -17,7 +17,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :update]
       resource :block_users, only: [:create, :destroy]
       resource :privilege, only: [:create, :destroy]
-      resources :rooms, only: [:new, :create, :show]
+      resources :rooms, only: [:index, :new, :create, :show]
     end
     resources :movies, only: [:searchs, :screenings] do
       collection do

@@ -23,6 +23,7 @@ en:
       coming_soon: "Coming soon"
       about: "About"
       admin: "Admin page"
+      room: "Room"
     footer:
       about: "About"
       contact: "Contact"
@@ -213,6 +214,8 @@ en:
         user: "Users Management"
         all_users: "All users"
     rooms:
+      index:
+        create_room: "Add room"
       new:
         screen: "Screen"
         select_seat: "Please choose seats"
@@ -224,7 +227,14 @@ en:
         screen: "Screen"
         seat_no: "Capacity"
         change: "Change"
+      edit:
+        edit: "Edit room"
+        screen: "Screen"
+        seat: "Seat"
+        no_seat: "No seat"
+        button_text: "Update"
       form:
+        name: "Name"
         seat_no: "Capacity"
         row: "Number of row"
         max_seats_per_row: "Max seats per row"

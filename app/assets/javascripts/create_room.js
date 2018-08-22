@@ -127,17 +127,26 @@ function slice_map(field_row, field_num) {
 }
 
 function room_changed(map) {
-  var AUTH_TOKEN = $("meta[name=csrf-token]").attr("content");
-  $.ajax({
-    url: "/admin/rooms/new",
-    type: "get",
-    data: {
-      field_map: map,
-      field_deleted_seats: Array.from(deleted_seats),
-      authenticity_token: AUTH_TOKEN
+  var $room_data = $("#create_room_data");
+  reset_seat_area($room_data);
+  $room_data.data("map", map);
+  $room_data.data("deleted_seats", Array.from(deleted_seats));
+
+  var $field_seat_no = $("#field_seat_no");
+  field_seat_no.value = num_available_seats(map);
+
+  $(document).trigger("turbolinks:load");
+};
+
+function num_available_seats(map) {
+  var count = 0;
+  map.forEach(function(row) {
+    for (i = 0; i < row.length; i++) {
+      if(row[i] == "a") count++;
     }
   });
-};
+  return count;
+}
 
 function get_deleted_seats() {
   var $field_deleted_seats = $("#field_deleted_seats");
@@ -149,17 +158,17 @@ function get_map() {
   field_map.value = map;
 };
 
-$(document).ready(function () {
-  if ($("#create_room_data").length != 0) {
+function change_room_listener($room_data) {
     var $field_row = $("#field_row"),
         $field_num = $("#field_num");
 
+    $field_row.off("change");
     $field_row.on("change", function() {
       room_changed(slice_map(field_row.value, field_num.value));
     });
 
+    $field_num.off("change");
     $field_num.on("change", function() {
       room_changed(slice_map(field_row.value, field_num.value));
-    });
-  }
-});
+  });
+}

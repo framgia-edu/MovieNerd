@@ -28,7 +28,7 @@ class SessionsController < ApplicationController
     if user.activated?
       log_in user
       remember_user user
-      redirect_to user
+      redirect_back_or user
     else
       flash[:warning] = t "activate_mail.message"
       redirect_to root_url
