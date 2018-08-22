@@ -1,0 +1,22 @@
+<li>
+  <div class="product-images">
+    <%= link_to movie_path movie do %>
+      <%= image_tag movie.picture.url if movie.picture? %></br>
+    <% end %>
+  </div>
+  <div class="product-info">
+    <b><%= link_to movie.title, movie_path(movie) %></br></b>
+    <div class="cgv-movie-info">
+      <span class="cgv-info-bold"><%= t "movie.label.genre" %>: </span>
+      <span class="cgv-info-normal"><%= movie.genre %></span>
+    </div>
+    <div class="cgv-movie-info">
+      <span class="cgv-info-bold"><%= t "movie.label.duration" %>: </span>
+      <span class="cgv-info-normal"><%= movie.duration %> <%= t "movie.minutes" %></span>
+    </div>
+    <div class="cgv-movie-info">
+      <span class="cgv-info-bold"><%= t "movie.label.release_date" %>: </span>
+      <span class="cgv-info-normal"><%= movie.release_date %></span>
+    </div>
+  </div>
+</li>

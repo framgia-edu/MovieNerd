@@ -1,7 +1,11 @@
 class RoomsController < ApplicationController
+  before_action :logged_in_user, only: [:show]
   before_action :load_support, only: [:show]
 
-  def show; end
+  def show
+    @order = Order.new
+    @selected_seats = []
+  end
 
   private
 

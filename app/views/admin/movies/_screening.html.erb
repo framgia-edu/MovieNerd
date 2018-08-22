@@ -1,8 +1,11 @@
 <li>
-  <%= I18n.l screening.screening_start %>
-  <%= screening.room.name %>
-  <%= t "screenings.screening.available" %>
+  <label><%= t "admin.rooms.show.name"%>: </label>
+  <span><%= screening.room.name %> - </span>
+  <label><%= t "admin.rooms.show.time"%>: </label>
+  <span><%= l screening.screening_start, format: :short %> - </span>
+  <span><%= l screening.screening_start + @movie.duration.minutes, format: :short %></span>
+  <label><%= t "screenings.screening.available" %></label>
     : <%= pluralize screening.available_seats, t("screenings.screening.seat") %>
-  | <%= link_to t(".delete"), admin_screening_path(screening), method: :delete,
-    data: {confirm: t(".sure")} %>
+  | <%= link_to t("movie.delete"), admin_screening_path(screening), method: :delete,
+    data: {confirm: t("movie.sure")} %>
 </li>

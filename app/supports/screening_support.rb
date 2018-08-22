@@ -17,7 +17,7 @@ class ScreeningSupport
   end
 
   def screenings_by_movie
-    @movie.screenings
+    @movie.screenings.not_show_yet
   end
 
   def screenings_by_room

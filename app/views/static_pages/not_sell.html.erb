@@ -1,0 +1,30 @@
+<table style="width: 900px; height: 204px;" cellspacing="0" cellpadding="0">
+  <tbody>
+    <tr>
+      <td width="200">
+        <%= link_to image_tag("question.png", :class => "image-size") %>
+      </td>
+      <td>
+        <div class="txt_error">
+          <h2><span style="color: #ff0000;"><%= t "not_sell.header" %></h2>
+        </div>
+        <div class="txt_error">
+          <%= t "not_sell.remind" %>
+        </div>
+        <div class="txt_error">
+          <span style="color: #ff0000;">
+            <%= t "not_sell.remind_1" %>
+          </span>
+        </div>
+        <div class="txt_error">
+          <%= t "not_sell.buy_live" %>
+        </div>
+        <div class="txt_error">
+          <%= t "not_sell.go_back" %>
+          <br><%= t "not_sell.back" %>
+          <a href="/"><%= t "not_sell.home_page" %></a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

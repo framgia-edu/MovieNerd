@@ -133,6 +133,7 @@ ul.product-grid li {
 @media only screen and (min-width: 771px) {
   .product-view .product-shop {
     width: 80%;
+    float: right;
   }
 }
 
@@ -226,7 +227,7 @@ ul.product-grid li {
 }
 
 .product-view .product-shop {
-  float: right;
+  float: left;
 }
 .page-title {
   margin-top: 30px;
@@ -301,10 +302,15 @@ label {
 
 .input.form-control {
     vertical-align: inherit !important;
+    display: inline;
+    width: auto;
 }
 
 .schedule {
   clear: both;
+  .schedule-date {
+    border-bottom: 1px solid #ccc;
+  }
 }
 
 .btnContainer {
@@ -317,4 +323,14 @@ label {
   position: relative;
   padding-bottom: 95px;
   height: 130px;
+}
+
+iframe {
+  width: auto;
+}
+
+@media only screen and (min-width: 771px) {
+  iframe {
+    width: 650px;
+  }
 }

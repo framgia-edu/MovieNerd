@@ -9,23 +9,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <div class="content">
   <div id="room_show_data"
     data-map="<%= @support.room_map %>"
-    data-movie_id="<%= @support.movie_id %>"
-    data-screening_id="<%= @support.screening_id %>"
-    data-room_id="<%= @support.room_id %>"
+    data-selected_seats="<%= @selected_seats %>"
     data-sold="<%= @support.sold %>"
     data-price="<%= ticket_price %>"
     data-i18n_locate="<%= t "js.locate" %>"
     data-i18n_unit="<%= t "js.unit" %>"
     data-i18n_precision="<%= t "number.currency.format.precision" %>"
     data-i18n_row="<%= t "js.row" %>"
+    data-i18n_screen="<%= t ".screen" %>"
     data-i18n_number="<%= t "js.number" %>">
   </div>
 
   <div class="main">
     <h2><%= t ".select_seat" %></h2>
     <div class="demo">
-      <div id="seat-map">
-        <div class="front"><%= t ".screen" %></div>
+      <div id="seat-partial">
+        <div id="seat-map">
+          <div class="front"><%= t ".screen" %></div>
+        </div>
       </div>
       <div class="booking-details">
         <ul class="book-left">
@@ -44,10 +45,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <div class="clear"></div>
         <ul id="selected-seats" class="scrollbar scrollbar1"></ul>
 
-        <%= link_to t(".next"),
-          "javascript:bookSeats()", class:"checkout-button" %>
+        <%= render "create_order_form", support: @support %>
 
         <div id="legend"></div>
+        </br>
       </div>
       <div style="clear:both"></div>
       </div>

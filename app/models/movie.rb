@@ -26,11 +26,27 @@ class Movie < ApplicationRecord
     Movie.where(id: Screening.select(:movie_id).where("screening_start >= ?"\
      " AND screening_start < ?", date, date.tomorrow).distinct)
   end)
+  scope :showing, (lambda do
+    Movie.where(id: Screening.where("screening_start >= ? AND screening_start"\
+      " < ?", Date.today, Date.today + Settings.movie.showing_day)
+      .distinct.pluck(:movie_id))
+  end)
+  scope :coming, (lambda do
+    Movie.where("release_date >= ?", Date.today).where.not(id:
+      Screening.where("screening_start >= ? AND"\
+      " screening_start" < '"', Date.today,
+        Date.today + Settings.movie.showing_day).distinct.pluck(:movie_id))
+  end)
   pg_search_scope :full_text_search,
     against: {
       title: "A",
-      director: "B",
-      description: "C"
+      cast: "B",
+      director: "C",
+      description: "D"
+    },
+    using: {
+      tsearch: {prefix: true},
+      trigram: {}
     }
   before_save :beatify
 
