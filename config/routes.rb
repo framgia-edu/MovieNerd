@@ -36,7 +36,7 @@ Rails.application.routes.draw do
     resources :schedules, only: [:index]
     resources :showings, only: [:index]
     resources :comings, only: [:index]
-    resources :orders, only: [:create]
+    resources :orders, only: [:create, :destroy]
     resources :accepts, only: [:index]
     resources :fails, only: [:index]
   end

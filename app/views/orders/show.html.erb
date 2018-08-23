@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag "ticket" %>
+
+<section>
+  <div class="circle">
+    <div class="event"><%= t ".event" %></div>
+    <div class="title"><%= @order.user.name %></div>
+  </div>
+  <div class="special"></div>
+  <div class="special"></div>
+  <div class="special"></div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".room" %></span><span>A</span>
+    </div>
+  </div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".movie" %></span><span></span>
+    </div>
+    <%= @order.screening.movie.title %>
+  </div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".seats" %></span><span><%= @order.seats.size %></span>
+    </div>
+    <% @order.seats.map(&:name).sort.each do |seat_name| %>
+      <%= seat_name %>
+    <% end %>
+  </div>
+  <div class="special">
+    <div class="seats">
+      <span class="label"><%= t ".time" %></span>
+    </div>
+    <%= @order.screening.screening_start.strftime("%H:%M %m/%d") %>
+  </div>
+</section>
+ <aside>
+  <%= render "bar_code" %>
+</aside>
