@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     end
     resources :searchs, only: [:index, :create]
     resources :account_activations, only: [:edit]
-    resources :password_resets, only: [:new, :create, :edit, :update]
+    # resources :password_resets, only: [:new, :create, :edit, :update]
     resources :rooms, only: [:show]
     resources :movies, only: [:show]
     resources :schedules, only: [:index]

@@ -296,6 +296,7 @@ vi:
   forgot_password:
     title: "Quên mật khẩu?"
     submit: "Xác nhận"
+    new_pass: "Mật khẩu mới"
     confirmation: "Xác nhận"
     update: "Cập nhật mật khẩu"
     info: "Một email chứa hướng dẫn đổi mật khẩu đã được gửi đến hòm thư của bạn"

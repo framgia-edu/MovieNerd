@@ -293,6 +293,7 @@ en:
   forgot_password:
     title: "Forgot password?"
     submit: "Submit"
+    new_pass: "New password"
     confirmation: "Confirmation"
     update: "Update password"
     info: "Email sent with password reset instructions"
