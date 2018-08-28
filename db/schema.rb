@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_25_185558) do
+ActiveRecord::Schema.define(version: 2018_08_28_024521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "screening_id"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_movie_tickets_on_deleted_at"
     t.index ["order_id"], name: "index_movie_tickets_on_order_id"
     t.index ["screening_id"], name: "index_movie_tickets_on_screening_id"
     t.index ["seat_id", "screening_id"], name: "index_movie_tickets_on_seat_id_and_screening_id", unique: true
@@ -70,6 +72,8 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.string "picture"
     t.string "trailer_url"
     t.string "slug"
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_movies_on_deleted_at"
     t.index ["slug"], name: "index_movies_on_slug", unique: true
     t.index ["title"], name: "index_movies_on_title", unique: true
   end
@@ -80,6 +84,8 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "paid", default: 1
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_orders_on_deleted_at"
     t.index ["screening_id"], name: "index_orders_on_screening_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -89,6 +95,8 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.integer "seat_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_rooms_on_deleted_at"
   end
 
   create_table "screenings", force: :cascade do |t|
@@ -97,6 +105,8 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.datetime "screening_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_screenings_on_deleted_at"
     t.index ["movie_id"], name: "index_screenings_on_movie_id"
     t.index ["room_id"], name: "index_screenings_on_room_id"
   end
@@ -108,6 +118,8 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_seats_on_deleted_at"
     t.index ["room_id", "row", "number"], name: "index_seats_on_room_id_and_row_and_number", unique: true
     t.index ["room_id"], name: "index_seats_on_room_id"
   end
@@ -130,7 +142,9 @@ ActiveRecord::Schema.define(version: 2018_08_25_185558) do
     t.string "slug"
     t.string "provider"
     t.string "uid"
+    t.datetime "deleted_at"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true
