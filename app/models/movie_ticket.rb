@@ -1,4 +1,5 @@
 class MovieTicket < ApplicationRecord
+  acts_as_paranoid
   belongs_to :seat
   belongs_to :order
   belongs_to :screening

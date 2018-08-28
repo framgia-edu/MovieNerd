@@ -1,8 +1,8 @@
 class Movie < ApplicationRecord
   extend FriendlyId
+  include PgSearch
   friendly_id :title, use: :slugged
   enum rated: [:G, :PG, :PG13, :R, :NC17]
-  include PgSearch
 
   has_many :screenings, dependent: :destroy
   has_many :rooms, through: :screenings

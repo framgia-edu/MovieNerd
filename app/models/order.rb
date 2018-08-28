@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  acts_as_paranoid
   enum paid: [:paid, :unpaid]
 
   belongs_to :user

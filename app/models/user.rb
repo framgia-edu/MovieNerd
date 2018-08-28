@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   extend FriendlyId
+  acts_as_paranoid
+
   friendly_id :email_slug, use: :slugged
   devise :database_authenticatable, :registerable, :confirmable,
     :recoverable, :rememberable, :validatable
