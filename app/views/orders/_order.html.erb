@@ -1,7 +1,7 @@
 <div class="shedule-item w3-text-brown">
   <h3>
     <b>
-      <%= t "orders.order" %>
+      <%= link_to t("orders.order"), user_order_path(order.user, order) %>
       <%= order.id %>
     </b>
   </h3>

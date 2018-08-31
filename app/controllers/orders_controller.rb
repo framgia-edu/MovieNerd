@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   def show; end
 
   def destroy
-    @order.destroy
+    @order.really_destroy!
     redirect_to root_url
   end
 

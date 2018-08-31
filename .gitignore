@@ -43,3 +43,4 @@ config/environments/*.local.yml
 /public/uploads/*
 /public/javascripts/translations.js
 dump.rdb
+coverage

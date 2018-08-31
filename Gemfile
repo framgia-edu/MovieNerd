@@ -40,6 +40,8 @@ gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :development do
@@ -50,9 +52,12 @@ group :development do
 end
 
 group :test do
+  gem "simplecov", require: false
   gem "capybara", ">= 2.15", "< 4.0"
   gem "chromedriver-helper"
+  gem "database_cleaner"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", require: false
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

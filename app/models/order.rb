@@ -29,11 +29,11 @@ class Order < ApplicationRecord
   end
 
   def user_deleted
-    user ||= User.with_deleted.find_by(id: user_id)
+    user || User.with_deleted.find_by(id: user_id)
   end
 
   def screening_deleted
-    screening ||= Screening.with_deleted.find_by(id: screening_id)
+    screening || Screening.with_deleted.find_by(id: screening_id)
   end
 
   def affected_2_user?
